@@ -1,0 +1,40 @@
+spring:
+  #数据库连接信息
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/otms
+    username: root
+    password: 123456
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+#mybatis配置
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+#本地文件存储
+file:
+  storage:
+    root-path: E:\OTMS-UPLOAD
+    max-file-size: 50MB
+    allowed-types: image/jpeg,image/png,application/pdf
+
+#spring事务管理日志
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: DEBUG
+
+server:
+  tomcat:
+    max-http-form-post-size: 10240000
+    threads:
+      max: 200
+      min-spare: 10
+    accept-count: 100
+  max-http-header-size: 10240000
+
+
